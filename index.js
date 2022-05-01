@@ -62,6 +62,7 @@ function Guess() {
     if(!words.includes(word)) {
         alert("Given word does not exist in my list...")
         document.getElementById("guessBox").value = ""
+        return
     }
     if(guessCount === 9) {
         alert("Oh too bad, you cant have more than 10 guesses...")
