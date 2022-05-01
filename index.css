@@ -11,18 +11,44 @@ input {
 .guesses {
     border: solid 3px gray;
 
+    width: 260px;
+
     margin-top: 10px;
     padding: 2px 10px 2px 10px;
 }
 
 .green {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+
     background-color: lightgreen;
 }
 
 .blue {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+
     background-color: lightskyblue;
 }
 
 .grey {
-    background-color: grey;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+
+    background-color: lightsteelblue;
 }

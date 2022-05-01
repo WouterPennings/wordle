@@ -46,23 +46,31 @@ function CreateRow() {
     document.getElementById("guesses").appendChild(node);
 }
 
-let currentWord = "";
+let currentWord;
 let wordLength = 5;
-let guessCount = 0;
+let guessCount;
 
 function NewWord(wordLength) {
+    guessCount = 0;
     currentWord = GetWords(wordLength)[RandomInt(0, words.length)]
+    //wordLength = currentWord.length; This somehow does not work....
+    console.log(wordLength)
     console.log("Current Word: " + currentWord)
 }
 
 function Guess() {
     const word = document.getElementById("guessBox").value;
     document.getElementById("guessBox").value = ""
-    console.log(word)
+
     // Checking if wordguess is even valid
     if(word.length !== wordLength) {
         alert(`A word with ${wordLength} characters has to be guessed`)
         return 
+    }
+    if(guessCount === 9) {
+        alert("Oh too bad, you cant have more than 10 guesses...")
+        document.getElementById("guessBox").value = ""
+        window.location.reload();
     }
     // Creates a new row for the letters to be appended to
     CreateRow()
