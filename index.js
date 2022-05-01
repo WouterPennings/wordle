@@ -46,7 +46,8 @@ async function NewWord(wordLength) {
         await FetchWordsFromGithub();
     }
     guessCount = 0;
-    currentWord = GetWords(wordLength)[RandomInt(0, words.length)]
+    currentWord = GetWords(wordLength)[RandomInt(0, words.length)];
+    console.log("Current Word: " + currentWord);
 }
 
 function Guess() {
