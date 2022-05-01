@@ -1,0 +1,28 @@
+input {
+    width: 400px;
+}
+
+.guess {
+    display: flex;
+    align-items: space-between;
+    gap: 15px; 
+}
+
+.guesses {
+    border: solid 3px gray;
+
+    margin-top: 10px;
+    padding: 2px 10px 2px 10px;
+}
+
+.green {
+    background-color: lightgreen;
+}
+
+.blue {
+    background-color: lightskyblue;
+}
+
+.grey {
+    background-color: grey;
+}
