@@ -4,23 +4,14 @@ function RandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-let words = [
-    "would",
-    "could",
-    "foods",
-    "ideas",
-    "words",
-    "brids",
-    "stick",
-    "hands",
-    "music",
-    "movie",
-    "usual",
-    "click",
-    "below",
-    "quirk",
-    "This is not allowed",
-];
+let words = [];
+
+async function FetchWordsFromGithub() {
+    const url1 = 'https://raw.githubusercontent.com/WouterPennings/wordle/main/words.txt?token=GHSAT0AAAAAABMPB3M65VLYICUGCQ7OCFL6YTPBYRQ'
+    const response = await fetch(url1);
+    let data = await response.text();
+    words = data.split(/\r?\n/);
+}
 
 function GetWords(length) {
     const newWords = words.filter((element) => {
@@ -42,20 +33,20 @@ function CreateRow() {
     let node = document.createElement("div");
     node.setAttribute("class", "guess");
     node.setAttribute("id", guessCount.toString());
-    console.log(node)
+
     document.getElementById("guesses").appendChild(node);
 }
 
-let currentWord;
+let currentWord = "THIS IS NOT SUPPOSED TO BE THIS";
 let wordLength = 5;
 let guessCount;
 
-function NewWord(wordLength) {
+async function NewWord(wordLength) {
+    if(words.length === 0) {
+        await FetchWordsFromGithub();
+    }
     guessCount = 0;
     currentWord = GetWords(wordLength)[RandomInt(0, words.length)]
-    //wordLength = currentWord.length; This somehow does not work....
-    console.log(wordLength)
-    console.log("Current Word: " + currentWord)
 }
 
 function Guess() {
