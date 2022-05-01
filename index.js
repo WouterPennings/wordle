@@ -7,10 +7,15 @@ function RandomInt(min, max) {
 let words = [];
 
 async function FetchWordsFromGithub() {
-    const url1 = 'https://raw.githubusercontent.com/WouterPennings/wordle/main/words.txt?token=GHSAT0AAAAAABMPB3M7EZJU27EGIL64NAOYYTPEVPA'
-    const response = await fetch(url1);
-    let data = await response.text();
-    words = data.split(/\r?\n/);
+    try {
+        const url1 = 'https://raw.githubusercontent.com/WouterPennings/wordle/main/words.txt?token=GHSAT0AAAAAABMPB3M7EZJU27EGIL64NAOYYTPEVPA';
+        const response = await fetch(url1);
+        let data = await response.text();
+        words = data.split(/\r?\n/);
+    }
+    catch {
+        console.log("Failed to fetch the words list from Github, maybe the link is old...");
+    }
 }
 
 function GetWords(length) {
@@ -43,34 +48,34 @@ let guessCount = 0;
 
 async function NewWord(wordLength) {
     if(words.length === 0) {
-        await FetchWordsFromGithub()
+        await FetchWordsFromGithub();
     }
     let res = GetWords(wordLength);
     let currentWord = res[RandomInt(0, res.length)];
-    console.log("Current word to guess: " + currentWord)
+    console.log("Current word to guess: " + currentWord);
 }
 
 function Guess() {
     const word = document.getElementById("guessBox").value;
-    document.getElementById("guessBox").value = ""
+    document.getElementById("guessBox").value = "";
 
     // Checking if wordguess is even valid
     if(word.length !== wordLength) {
         alert(`A word with ${wordLength} characters has to be guessed`)
-        return 
+        return;
     }
     if(!words.includes(word)) {
         alert("Given word does not exist in my list...")
         document.getElementById("guessBox").value = ""
-        return
+        return;
     }
     if(guessCount === 9) {
-        alert("Oh too bad, you cant have more than 10 guesses...")
-        document.getElementById("guessBox").value = ""
+        alert("Oh too bad, you cant have more than 10 guesses...");
+        document.getElementById("guessBox").value = "";
         window.location.reload();
     }
     // Creates a new row for the letters to be appended to
-    CreateRow()
+    CreateRow();
 
     // Doing the actual logic for checking the individual letters
     let isCorrect = true;
@@ -88,8 +93,8 @@ function Guess() {
         }
     }
     if(isCorrect) {
-        alert("Nice job, you just wordle'd the right word!")
-        document.getElementById("guessBox").value = ""
+        alert("Nice job, you just wordle'd the right word!");
+        document.getElementById("guessBox").value = "";
         window.location.reload();
     }
     guessCount++;
