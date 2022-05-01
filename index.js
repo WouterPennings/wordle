@@ -7,7 +7,7 @@ function RandomInt(min, max) {
 let words = [];
 
 async function FetchWordsFromGithub() {
-    const url1 = 'https://raw.githubusercontent.com/WouterPennings/wordle/main/words.txt?token=GHSAT0AAAAAABMPB3M65VLYICUGCQ7OCFL6YTPBYRQ'
+    const url1 = 'https://raw.githubusercontent.com/WouterPennings/wordle/main/words.txt?token=GHSAT0AAAAAABMPB3M7EZJU27EGIL64NAOYYTPEVPA'
     const response = await fetch(url1);
     let data = await response.text();
     words = data.split(/\r?\n/);
