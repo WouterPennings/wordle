@@ -39,15 +39,15 @@ function CreateRow() {
 
 let currentWord = "THIS IS NOT SUPPOSED TO BE THIS";
 let wordLength = 5;
-let guessCount;
+let guessCount = 0;
 
 async function NewWord(wordLength) {
     if(words.length === 0) {
-        await FetchWordsFromGithub();
+        await FetchWordsFromGithub()
     }
-    guessCount = 0;
-    currentWord = GetWords(wordLength)[RandomInt(0, words.length)];
-    console.log("Current Word: " + currentWord);
+    let res = GetWords(wordLength);
+    let currentWord = res[RandomInt(0, res.length)];
+    console.log("Current word to guess: " + currentWord)
 }
 
 function Guess() {
@@ -58,6 +58,10 @@ function Guess() {
     if(word.length !== wordLength) {
         alert(`A word with ${wordLength} characters has to be guessed`)
         return 
+    }
+    if(!words.includes(word)) {
+        alert("Given word does not exist in my list...")
+        document.getElementById("guessBox").value = ""
     }
     if(guessCount === 9) {
         alert("Oh too bad, you cant have more than 10 guesses...")
