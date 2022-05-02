@@ -51,7 +51,7 @@ async function NewWord(wordLength) {
         await FetchWordsFromGithub();
     }
     let res = GetWords(wordLength);
-    let currentWord = res[RandomInt(0, res.length)];
+    currentWord = res[RandomInt(0, res.length / 5)];
     console.log("Current word to guess: " + currentWord);
 }
 
