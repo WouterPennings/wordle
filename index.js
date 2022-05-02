@@ -36,7 +36,7 @@ function AppendNode(letter, type) {
 
 function CreateRow() {
     let node = document.createElement("div");
-    node.setAttribute("class", "guess");
+    node.setAttribute("class", "guessRow");
     node.setAttribute("id", guessCount.toString());
 
     document.getElementById("guesses").appendChild(node);
@@ -65,7 +65,6 @@ function Guess() {
     }
     if(!words.includes(word)) {
         alert("Given word does not exist in my list...")
-        document.getElementById("guessBox").value = ""
         return;
     }
     if(guessCount === 8) {

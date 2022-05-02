@@ -1,6 +1,7 @@
 <html>
     <head>
         <script type = "text/javascript" src="index.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="stylesheet" href="index.css">
         <title>Wordle</title>
     </head>
@@ -8,18 +9,21 @@
         <script>
             NewWord(5); 
         </script>
-        <div class="content">
+        <main>
             <!-- This is for guesses. Will be added with JavaScript -->
-            <div class="guesses" id="guesses"></div>
-            
-            <div>
-                <input type="text" id="guessBox" placeholder="Guess the 5 letter word...">
-                <div style="display: flex; justify-content: flex-start; gap: 10px">
-                    <button class="guessButton" onclick="Guess()">Guess</button>
-                    <button class="restartButton" onclick="RestartGame()">Give Up</button> 
-                </div>
+            <h3 style="margin: 0; margin-bottom: 5px;">Your Guesses:</h3>
+            <div class="guessesBlock" id="guesses"></div>
+        </main>
+        <div class="inputMenu">
+            <input type="text" id="guessBox" placeholder="Guess the 5 letter word...">
+            <div style="display: flex; justify-content: flex-start; gap: 10px">
+                <button class="guessButton" onclick="Guess()">Guess</button>
+                <button class="restartButton" onclick="RestartGame()">Give Up</button> 
             </div>
         </div>
-        <h1 class="title">Wordle</h1>
+        <footer>
+            <!-- @2022 Wouter Pennings -->
+            <a href="https://github.com/WouterPennings/wordle" target="_blank"><img src="githubIcon.png"/></a>
+        </footer>
     </body>
 </html>

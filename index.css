@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
 html {
+    font-family: 'Comfortaa', cursive;
     margin: 0;
     padding: 0;
 }
@@ -9,18 +10,76 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     align-items: center;
-
-    padding: 20px;
     margin: 0;
-
-    max-width: 1100px;
-    height: 94vh;
-
-    border-radius: 10px;
+    padding: 20px 10px 0 10px;
 
     background-color: #D0EEE4;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-width: 350px;
+
+    width: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+img {
+    margin-bottom: 10px;
+
+    height: 40px;
+    width: auto;
+
+}
+
+.inputMenu {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-width: 350px;
+
+    margin-bottom: 80px;
+
+    width: 100%;
+}
+
+.guessesBlock {
+    background-color: white;
+    border-radius: 10px;
+
+    padding: 40px 20px 20px 20px;
+    margin-bottom: 50px;
+
+    box-shadow: 3px 3px 0 rgb(156, 179, 171);
+}
+
 
 input {
     width: 100%;
@@ -34,70 +93,34 @@ input {
     padding: 0 20px 0 20px
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    width: 100%;
-    height: 100%;
-}
-
-.title {
-    font-family: 'Comfortaa', cursive;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.guess {
+.guessRow {
     display: flex;
     justify-content: center;
     align-items: space-around;
     width: 100%;
     gap: 15px; 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+}
+
+.guessButton, .restartButton {
+    margin-top: 10px;
+    font-size: 20px;
+    width: 100px;
+    height: 45px;
+    color: white;
+    border-radius: 20px;
+    border-width: 0;
+    box-shadow: 3px 3px 0 rgb(156, 179, 171);
 }
 
 .guessButton {
-    margin-top: 10px;
-    font-size: 20px;
-    width: 100px;
-    height: 45px;
     background-color: #8AA39B;
-    color: white;
-    border-radius: 20px;
-    border-width: 0;
-    box-shadow: 3px 3px 0 rgb(156, 179, 171);
 }
-
 .restartButton {
-    margin-top: 10px;
-    font-size: 20px;
-    width: 100px;
-    height: 45px;
     background-color: #FF3333;
-    color: white;
-    border-radius: 20px;
-    border-width: 0;
-    box-shadow: 3px 3px 0 rgb(156, 179, 171);
 }
 
-.guesses {
-    font-family: 'Comfortaa', cursive;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px gray;
-
-    width: 100%;
-    height: 80%;
-
-    padding: 20px;
-    margin-bottom: 50px;
-}
-
-.green {
-    font-family: 'Comfortaa', cursive;
+.green, .blue, .grey {
     width: 45px;
     height: 35px;
     border-radius: 5px;
@@ -106,33 +129,16 @@ input {
     justify-content: center;
     padding-top: 14px;
     margin: 0;
+}
 
+.green {
     background-color: #FF3333;
 }
 
 .blue {
-    font-family: 'Comfortaa', cursive;
-    width: 45px;
-    height: 35px;
-    border-radius: 5px;
-
-    display: flex;
-    justify-content: center;
-    padding-top: 14px;
-    margin: 0;
-
     background-color: #46a584;
 }
 
 .grey {
-    width: 45px;
-    height: 35px;
-    border-radius: 5px;
-
-    display: flex;
-    justify-content: center;
-    padding-top: 14px;
-    margin: 0;
-
     background-color: #9aa5a1;
 }
