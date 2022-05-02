@@ -45,6 +45,7 @@ function CreateRow() {
 let currentWord = "THIS IS NOT SUPPOSED TO BE THIS";
 let wordLength = 5;
 let guessCount = 0;
+let hasGuessed = false;
 
 async function NewWord(wordLength) {
     if(words.length === 0) {
@@ -59,6 +60,10 @@ function Guess() {
     const word = document.getElementById("guessBox").value.toLowerCase();
 
     // Checking if wordguess is even valid
+    if(hasGuessed) {
+        alert("You have already won the game. Click on \"Restart Game\" to start over!"); 
+        return;
+    }
     if(word.length !== wordLength) {
         alert(`A word with ${wordLength} characters has to be guessed`)
         return;
@@ -91,7 +96,7 @@ function Guess() {
     }
     if(isCorrect) {
         alert("Nice job, you just wordle'd the right word!");
-        RestartGame();
+        hasGuessed = true;
     }
     guessCount++;
 }
