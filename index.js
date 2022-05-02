@@ -56,8 +56,7 @@ async function NewWord(wordLength) {
 }
 
 function Guess() {
-    const word = document.getElementById("guessBox").value;
-    document.getElementById("guessBox").value = "";
+    const word = document.getElementById("guessBox").value.toLowerCase();
 
     // Checking if wordguess is even valid
     if(word.length !== wordLength) {
@@ -71,8 +70,7 @@ function Guess() {
     }
     if(guessCount === 9) {
         alert("Oh too bad, you cant have more than 10 guesses...");
-        document.getElementById("guessBox").value = "";
-        window.location.reload();
+        RestartGame();
     }
     // Creates a new row for the letters to be appended to
     CreateRow();
@@ -94,8 +92,12 @@ function Guess() {
     }
     if(isCorrect) {
         alert("Nice job, you just wordle'd the right word!");
-        document.getElementById("guessBox").value = "";
-        window.location.reload();
+        RestartGame();
     }
     guessCount++;
+}
+
+function RestartGame() {
+    document.getElementById("guessBox").value = "";
+    window.location.reload();
 }
