@@ -8,16 +8,19 @@
         <script>
             NewWord(5); 
         </script>
-        <h1>Welcome to Wordle</h1>
-        <h3>GREEN LETTER  => letter is in the correct place</h3>
-        <h3>BLUE LETTER   => Letter is in the word, on the wrong place</h3>
-        <h3>GREY LETTER   => Letter is not in the word</h3>
+        <main>
+            <div class="content">
+                <div class="guesses" id="guesses">
+                </div>
         
-        <input type="text" id="guessBox" placeholder="Guess the 5 letter word...">
-        <button onclick="Guess()">Guess</button>
+                <input type="text" id="guessBox" placeholder="Guess the 5 letter word...">
+                <div style="display: flex; justify-content: flex-start; gap: 10px">
+                    <button class="guessButton" onclick="Guess()">Guess</button>
+                    <button class="restartButton" onclick="RestartGame()">Give Up</button> 
+                </div>
 
-        <div class="guesses" id="guesses">
-            <h3>Your guesses:</h3>
-        </div>
+            </div>
+            <h1 class="title">Wordle</h1>
+        </main>
     </body>
 </html>

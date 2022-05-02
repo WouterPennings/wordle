@@ -68,7 +68,7 @@ function Guess() {
         document.getElementById("guessBox").value = ""
         return;
     }
-    if(guessCount === 9) {
+    if(guessCount === 8) {
         alert("Oh too bad, you cant have more than 10 guesses...");
         RestartGame();
     }
