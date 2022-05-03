@@ -8,6 +8,13 @@
     <body>
         <script>
             NewWord(5); 
+
+            document.addEventListener("keyup", function(event) {
+                // Detecting if user presses "Enter"
+                if (event.keyCode === 13) {
+                    Guess();
+                }
+            });
         </script>
         <main>
             <h3 style="margin: 0; margin-bottom: 5px;">Your Guesses</h3>

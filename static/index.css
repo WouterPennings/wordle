@@ -93,6 +93,10 @@ input {
     padding: 0 20px 0 20px
 }
 
+input:hover {
+    background-color: rgb(233, 233, 233);
+}
+
 .guessRow {
     display: flex;
     justify-content: center;
@@ -139,6 +143,8 @@ input {
     justify-content: center;
     padding-top: 14px;
     margin: 0;
+
+    font-size: 20px;
 }
 
 .green {

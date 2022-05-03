@@ -27,7 +27,7 @@ function GetWords(length) {
   
 function AppendNode(letter, type) {
     const textnode = document.createTextNode(letter);
-    let node = document.createElement("h3");
+    let node = document.createElement("span");
     node.setAttribute("class", type);
     node.appendChild(textnode);
 
@@ -73,7 +73,7 @@ function Guess() {
         return;
     }
     if(!words.includes(word)) {
-        alert("Given word does not exist in my list...")
+        alert("Given word does not exist in my list of possible words...")
         return;
     }
     // Creates a new row for the letters to be appended to
