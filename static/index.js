@@ -106,3 +106,8 @@ function RestartGame() {
     document.getElementById("guessBox").value = "";
     window.location.reload();
 }
+
+function BugReport(){
+    if(confirm("Did you find a bug, and do you want to report it?"))
+        window.open("https://github.com/WouterPennings/wordle/issues", '_blank').focus(); 
+}
