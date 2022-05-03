@@ -4,7 +4,16 @@ A simple Wordl clone, nothing special. Go to: https://wouterpennings.github.io/w
 
 ## Game Play
 
+When landing on the page you fill in 5 letter words in the textbox below and press `Guess`. All the letters of the just submitted word get a color:
+- `Grey`: Letter is not in the word
+- `Green`: Letter is in the word, but not in the correct place
+- `Red`: Letter is in the word on the correct place
 
+If you get the word in 8 guesses you win!, otherwise you lose. Your page will look something like this:
+
+![image](https://user-images.githubusercontent.com/58933609/166345650-cee46404-45ad-4475-9e44-a263e1df853d.png)
+
+After every game (or in the middle if you want to restart) you need to restart you game, you do that by pressing the red button.
 
 ## Word Filtering
 
