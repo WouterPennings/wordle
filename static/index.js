@@ -64,6 +64,10 @@ function Guess() {
         alert("You have already won the game. Click on \"Restart Game\" to start over!"); 
         return;
     }
+    if(guessCount === 8) {
+        alert("Oh too bad, you cant have more than 10 guesses... Click on \"Restart Game\" to start over!");
+        return;
+    }
     if(word.length !== wordLength) {
         alert(`A word with ${wordLength} characters has to be guessed`)
         return;
@@ -71,10 +75,6 @@ function Guess() {
     if(!words.includes(word)) {
         alert("Given word does not exist in my list...")
         return;
-    }
-    if(guessCount === 8) {
-        alert("Oh too bad, you cant have more than 10 guesses...");
-        RestartGame();
     }
     // Creates a new row for the letters to be appended to
     CreateRow();
