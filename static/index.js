@@ -52,7 +52,7 @@ async function NewWord(wordLength) {
         await FetchWordsFromGithub();
     }
     let res = GetWords(wordLength);
-    currentWord = res[RandomInt(0, res.length / 5)];
+    currentWord = res[RandomInt(0, res.length / 7)];
     console.log("Current word to guess: " + currentWord);
 }
 
@@ -78,6 +78,7 @@ function Guess() {
     }
     // Creates a new row for the letters to be appended to
     CreateRow();
+    document.getElementById("guessBox").value = "";
 
     // Doing the actual logic for checking the individual letters
     let isCorrect = true;

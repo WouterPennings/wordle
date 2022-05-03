@@ -2,6 +2,10 @@
 
 A simple Wordl clone, nothing special. Go to: https://wouterpennings.github.io/wordle/ for a quick demo.
 
+## Game Play
+
+
+
 ## Word Filtering
 
 The words used for my Wordle game come from this [repository](https://gist.github.com/h3xx/1976236). It is a (sorted) list of the top 100.000 words used in the english language, in reality it is a bit less. In my opinion however, the list is a bit "dirty", lots of double words, weird quirks in the formatting, etc.
