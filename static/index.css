@@ -117,8 +117,17 @@ input {
 .guessButton {
     background-color: #8AA39B;
 }
+
+.guessButton:hover {
+    background-color: #6d837c;
+}
+
 .restartButton {
     background-color: #FF3333;
+}
+
+.restartButton:hover {
+    background-color: #eb1a1a;
 }
 
 .green, .blue, .grey {
